@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Permanent+Marker&display=swap');
+
+@font-face {
+    font-family: '';
+    src: url('6ba89d439311e87b18f6096c1b2a8263.woff2') format('woff2'),
+        url('6ba89d439311e87b18f6096c1b2a8263.woff') format('woff'),
+        url('6ba89d439311e87b18f6096c1b2a8263.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+/* Remove Defaults */
+*{
+    box-sizing: border-box;
+}
+.opacity{
+    opacity: 0.8;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo', sans-serif;
+    overflow-x: hidden;
+}
+
+ul{
+    list-style-type: none;
+}
+.bold{
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* colors */
+.orange{
+    color: rgba(243,99,34,255) !important;
+}
+
+.red{
+    color: rgba(156,28,30,255);
+    font-weight: 500;
+}
+
+.btn{
+    display: inline-block;
+    padding: 2% 5%;
+    background-color: rgba(243,99,34,255);
+    font-size: 1.2vw;
+    
+}
+
+
+header{
+    width: 100%;
+    height: 100vh;
+    background: url(../images/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 2%;
+    padding-top: 3%;
+    
+}
+
+.nav-logo{
+    position: relative;
+    z-index: 0;
+    top: -20px;
+    align-self: center;
+}
+
+
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img{
+    align-self: center;
+    height: 100px;
+}
+
+.nav-logo a{
+    color: rgb(224, 224, 224);
+    font-size: 2.5vw;
+}
+
+.nav-ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+
+   
+}
+
+.nav-ul li{
+    margin: 0 2%;
+    font-size: 1.5vw;
+    
+}
+
+.nav-ul a{
+    color: rgb(252, 251, 251);
+    font-weight: 500;
+}
+
+.nav-ul a:hover{
+    color: white;
+}
+
+.ham-menu{
+    display: none;
+}
+
+/* mobile menue */
+.mobile-menu-container{
+    position: fixed;
+    z-index: 200;
+    width: 100vw;
+    height: 100vh;
+    top: -150%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.mobile-menu{
+    list-style-type: none;
+    padding: 0;
+}
+
+.close{
+    margin-left: 20px;
+    color: white;
+}
+
+.mobile-menu li{
+    margin: 20px 0;
+}
+
+.mobile-menu a{
+    color: white;
+    font-size: 5vw;
+}
+
+.mobile-menu a:hover{
+    color: beige;
+}
+
+/* header-content */
+.header-content{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.header-content h3{
+    font-size: 3vw;
+}
+.header-content h1{
+    font-family: '';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 9vw;
+}
+
+
+/* dropdown */
+
+.dropdown{
+    position: relative;
+    color: white;
+    font-size: 1.5vw;
+    width: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.links{
+    position: absolute;
+    background-color: rgba(243,99,34,255) !important;;
+    padding: 10px 5px;
+    /* left:-35%; */
+    display: none;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+    
+    
+}
+
+
+.dropdown:hover .links{
+    display: block;
+}
+
+.links ul{
+    padding-left: 0;
+}
+
+.links a{
+    font-size: 1vw;
+}
+
+
+
+
+/* footer */
+
+footer{
+    background-color: rgb(25, 25, 25);
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+footer .container{
+    border-top: 1px rgb(204, 204, 204) solid;
+    border-bottom: 1px rgb(204, 204, 204) solid;
+    padding: 30px 0;
+}
+
+.footer-heading{
+    font-family: '';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    font-size: 3vw;
+}
+
+.footer-links{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links div{
+    width: 100%;
+    height: 100%;
+   
+    
+}
+
+.footer-menu{
+    padding-left: 10px;
+}
+
+.footer-menu li{
+    margin: 20px 0;
+}
+
+.footer-menu a{
+    color: white;
+    font-size: 1.1vw;
+}
+
+.footer-address{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.footer-address p{
+    margin: 0;
+    padding: 2px 0;
+}
+
+.footer-moral{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:800px) {
+
+    .nav-logo a{
+        font-size: 6vw;
+        top: 0;
+    }
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .nav-ul{
+        display: none;
+    }
+    .nav-ul li{
+        font-size: 2.5vw;
+    }
+   .links a{
+        font-size: 2.5vw;
+    }
+    .links li{
+        margin: 4px 0;
+    }
+    .dropdown{
+        padding: 0;
+        font-size: 5vw;
+    }
+    .ham-menu{
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding-top: 20px;
+    }
+
+    /* header-content(mobile) */
+    .header-content h3{
+        font-size: 5vw;
+    }
+    .header-content h1{
+        font-size: 13vw;
+    }
+
+    /* footer */
+    .footer-links{
+        grid-template-columns: 1fr;
+    }
+    .footer-links div{
+        border-right: 0;
+        margin-bottom: 10px;
+    }
+    .footer-heading{
+        font-size: 7vw;
+    }
+
+    .footer-menu a{
+        font-size: 2.8vw;
+    }
+    .footer-menu ul{
+        padding-left: 10px;
+    }
+
+    .btn{
+        font-size: 2.5vw;
+    }
+
+    .remove{
+        display: none;
+    }
+
+}
+
+

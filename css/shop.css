@@ -1,0 +1,107 @@
+.shop, .donate{
+    width: 100%;
+    padding: 100px 0;
+}
+
+
+header{
+    background: url('https://cdn.discordapp.com/attachments/519211413735211021/986700878729859082/udayaditya-barua-xisPXJqwQkA-unsplash.jpg') !important;
+    /* background-position: center -200px !important; */
+ 
+
+
+}
+
+.showcase-grid, .donation-showcase{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card{
+    width: 20vw;
+   
+    min-width: 200px;
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-self: center;
+
+}
+
+
+
+
+
+.card-content{
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content p{
+    font-size: 1.3vw;
+}
+
+.shop-heading{
+    font-size: 3vw;
+}
+
+.donation-info{
+    font-size: 1.3vw;
+    margin: 20px 0;
+    
+
+}
+
+.donation-showcase .card{
+    height: 100%;
+    min-width: 300px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.donation-showcase .card img{
+    max-height: 273px;
+}
+
+.donate-btn{
+    display: inline-block;
+    padding: 3% 10%;
+    background-color: rgba(243,99,34,255);
+    text-align: center;
+    color: white;
+}
+
+
+@media (max-width:800px) {
+    .card-content p{
+        font-size: 2.8vw;
+    }
+
+    .showcase-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .shop-heading{
+        font-size: 7vw;
+    }
+    .donation-info{
+        font-size: 2.7vw;
+    }
+    .donation-showcase{
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+@media (max-width:450px) {
+  
+    .showcase-grid{
+        grid-template-columns:  1fr;
+    }
+}

@@ -1,0 +1,141 @@
+header{
+    background: url('https://cdn.discordapp.com/attachments/519211413735211021/986695398410297414/geran-de-klerk-yKiLWMWquKE-unsplash.jpg') !important;
+    background-position: center -500px !important;
+ 
+
+
+}
+
+
+.wildlife-places .container{
+    padding-left: 10px;
+   
+}
+
+.wildlife-heading{
+    font-size: 3vw;
+}
+
+.wildlife-places img{
+    width: 100%;
+}
+
+.wildlife-places h2{
+    font-size: 2vw;
+}
+
+.wildlife-introduction, .wildlife-place-item p{
+    font-size: 1.2vw;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.map{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.map iframe{
+    width: 60vw;
+    height: 30vw;
+}
+
+.image-roll{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 100px;
+    margin-top: 20px;
+}
+
+.border-bottom{
+    border-bottom: 1px black solid;
+}
+
+
+
+.image-roll div{
+    width: 100%;
+}
+
+.image-roll div img{
+    width: 100%;
+    height: 100%;
+    max-height: 289px;
+}
+
+
+
+.table-wrapper{
+    max-width: 100vw;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 30px 0;
+}
+
+.table{
+    width: 100%;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-x: scroll;
+
+}
+
+
+
+.table div{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    min-width: 146px;
+}
+
+.heading{
+    font-size: 1.3vw;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.data{
+    font-size: 1vw;
+    opacity: 0.8;
+}
+
+.data ul{
+    list-style-type: disc;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:800px){
+    .wildlife-heading{
+        font-size: 7vw;
+    }
+    .wildlife-introduction, .wildlife-place-item p{
+        font-size: 2.8vw;
+
+    }
+
+    .wildlife-places h2{
+        font-size: 4vw;
+    }
+    
+    .heading{
+        font-size: 2.3vw;
+    }
+
+    
+.data{
+    font-size: 2.8vw;
+   
+}
+}

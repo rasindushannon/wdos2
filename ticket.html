@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/activities.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LankaTours</title>
+
+    <style>
+        .small {
+            font-size: 14px;
+        }
+
+        .ticket-form {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 50px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .order-list {
+            display: flex;
+            padding: 0;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .order-list-overall {
+            display: flex;
+            padding: 0;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .formstyle {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr;
+
+        }
+
+        .formstyle div:nth-child(4) {
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 100%;
+            background-color: unset;
+            opacity: 1;
+            border: 1px black solid;
+            height: 100%;
+        }
+
+        input:last-of-type {
+            height: auto;
+        }
+
+        input::placeholder {
+            color: #ffffff;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        select,
+        option {
+            background-color: transparent;
+            height: 100%;
+        }
+
+        select option {
+            margin: 40px;
+            background: transparent;
+            color: black;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            border-radius: unset;
+        }
+
+        .formstyle div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+        }
+
+        .formstyle label {
+            padding: 5px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 0px black solid;
+            margin: 5px;
+            font-size: 15px;
+            /* color: white; */
+
+        }
+
+        .ticket-heading {
+            padding-bottom: 20px;
+        }
+
+        @media (max-width:500px) {
+            .formstyle div {
+                grid-template-columns: 1fr;
+            }
+
+            .formstyle label,
+            option {
+                text-align: center;
+            }
+
+            .order-list {
+                flex-direction: column;
+            }
+
+            .order-list-overall {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Mobile-full-screen-nav-bar -->
+    <div class="mobile-menu-container">
+
+        <ul class="mobile-menu">
+            <li> <a href="index.html">Home</a></li>
+            <li> <a href="Wildlife.html">Wildlife</a></li>
+            <li> <a href="Beaches.html">Beaches</a></li>
+            <li> <a href="activities.html">Activities</a></li>
+            <li class="dropdown">
+                Heritages
+                <div class="links">
+                    <ul>
+                        <li> <a href="polonnaruwa.html">Polonnaruwa</a></li>
+                        <li> <a href="sigiriya.html">Sigiriya</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> <a href="Shop.html"> Shop</a></li>
+        </ul>
+        <a href="javascript:void(0)" class="close" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+    </div>
+    <header>
+        <div class="container">
+            <nav>
+                <span class="nav-logo"><a class="logo" href="index.html"><img
+                            src="https://cdn.discordapp.com/attachments/985915430470287430/986684296301518878/logo_1.png"
+                            alt=""><span class="remove">LEISURE LANKA</span></a></span>
+                <ul class="nav-ul">
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="Wildlife.html">Wildlife</a></li>
+                    <li> <a href="Beaches.html">Beaches</a></li>
+                    <li> <a href="activities.html">Activities</a></li>
+                    <li class="dropdown">
+                        Heritages
+                        <div class="links">
+                            <ul>
+                                <li> <a href="polonnaruwa.html">Polonnaruwa</a></li>
+                                <li> <a href="sigiriya.html">Sigiriya</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li> <a href="Shop.html"> Shop</a></li>
+                </ul>
+                <a href="javascript:void(0)" class="ham-menu" onclick="openNav()"><i class="fa-solid fa-bars"></i></a>
+            </nav>
+        </div>
+        <!-- header-content -->
+        <div class="header-content">
+            <div>
+                <h3>Your One Stop Destination to</h3>
+                <h1>Sri <span class="orange">Lanka</span></h1>
+            </div>
+
+        </div>
+    </header>
+    <div class="ticket-form">
+        <h1 class="ticket-heading"><span class="orange">Ticket</span> Booking</h1>
+        <form action="javascript:void(0)" onchange="updateInfo()" class="formstyle">
+            <div>
+                <label for="pass">Select Pass:</label>
+                <select name="pass" id="pass">
+                    <option value="-">Select Pass</option>
+                    <option value="Foreign Adult Pass">Foreign Adult Pass</option>
+                    <option value="Foreign Child Pass">Foreign Child Pass</option>
+                    <option value="Local Adult Pass">Local Adult Pass</option>
+                    <option value="Local Child Pass">Local Child Pass</option>
+                    <option value="Annual Pass-Local">Annual Pass-Local</option>
+                    <option value="Annual Pass-Foreign">Annual Pass-Foreign</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="number">Quantity Required:</label>
+                <input type="number" id="num">
+            </div>
+
+            <div>
+                <label for="pass">Duration:</label>
+                <select name="duration" id="duration">
+                    <option value="-">Select Duration</option>
+                    <option value="3 Hours">3 Hours</option>
+                    <option value="1/2 Day">1/2 Day</option>
+                    <option value="Full Day">Full Day</option>
+                    <option value="2 Days">2 Days</option>
+                </select>
+            </div>
+            <div>
+
+                <label for="foodtoken">Food Token</label>
+                <input type="checkbox" id="foodtoken" value="foodtoken">
+            </div>
+
+
+            <div class="buttons">
+                <button class="btn" onclick="addOrder()">Add to order</button>
+                <button class="btn" onclick="placeOrder()">Place order</button>
+                <button class="btn" onclick="addFavourite()">Add to Favorites</button>
+                <button class="btn" onclick="orderFavourite()">Order Favorites</button>
+                <button class="btn" onclick="checkLoyalty()">Check Loyalty</button>
+            </div>
+            <p class="small">*Note: For children under age 3, entrance is free.</p>
+        </form>
+
+        <h1><span class="orange">Current</span> Order:</h1>
+        <ul class="order-list">
+            <li id="displaypass">-</li>
+            <li id="displayquantity">-</li>
+            <li id="displayduration">- </li>
+            <li id="displayfoodtoken">-</li>
+            <li id="displaycost">0</li>
+        </ul>
+
+        <h1><span class="orange">Overall</span> Order:</h1>
+        <div class="overall-order">
+            <div class="overall-order-list">
+
+            </div>
+            <div class="total bold">
+                <ul class="order-list">
+                    <li>Total</li>
+                    <li id="total">0</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <h1 class="footer-heading">LEISURE LANKA</h1>
+            <div class="footer-links">
+                <div class="footer-menu">
+                    <ul>
+                        <li> <a href="index.html">Home</a></li>
+                        <li> <a href="Wildlife.html">Wildlife</a></li>
+                        <li> <a href="Beaches.html">Beaches</a></li>
+                        <li> <a href="activities.html">Activities</a></li>
+                        <li> <a href="Shop.html"> Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-address">
+                    <span>
+                        <h2>Lanka Tours</h2>
+                        <p>No 16, ward Place,</p>
+                        <p>Colombo 5</p>
+                    </span>
+                </div>
+                <div class="footer-moral">
+                    <h1>Sri Lanka's No.1 <span class="orange">Tourism Website</span></h1>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+    <script>
+        let currentitem = {
+            pass: '-',
+            quantity: 0,
+            duration: 0,
+            foodtoken: '-',
+            cost: 0
+        };
+
+        let totalCost = 0;
+
+        function updateInfo() {
+            currentCost = 0;
+            let foodtokenval = 0;
+            let pass = document.querySelector('#pass').value;
+            let quantity = document.querySelector('#num').value;
+            let duration = document.querySelector('#duration').value;
+            let foodtoken = document.querySelector('#foodtoken');
+
+
+            // check cost
+
+            // annualpass
+            if ((pass == 'Annual Pass-Local') || (pass == 'Annual Pass-Foreign')) {
+                if (pass == 'Annual Pass-Local') {
+                    currentCost = (4500) * quantity;
+                    document.querySelector('#displayduration').innerHTML = '-';
+                    foodtoken.checked = false;
+
+                } else {
+                    currentCost = (15000) * quantity;
+                    document.querySelector('#displayduration').innerHTML = '-';
+                    foodtoken.checked = false;
+                }
+            }
+
+            // 3hours
+            if ((pass == 'Local Adult Pass' && duration == '3 Hours') || (pass == 'Local Child Pass' && duration ==
+                    '3 Hours')) {
+                if (pass == 'Local Adult Pass') {
+                    currentCost = (1000 + foodtokenval) * quantity;
+                } else {
+                    currentCost = (500 + foodtokenval) * quantity;
+                }
+            }
+            if ((pass == 'Foreign Adult Pass' && duration == '3 Hours') || (pass == 'Foreign Child Pass' && duration ==
+                    '3 Hours')) {
+                if (pass == 'Foreign Adult Pass') {
+                    currentCost = (5000 + foodtokenval) * quantity;
+                } else {
+                    currentCost = (2500 + foodtokenval) * quantity;
+                }
+            }
+
+            // 1/2hours
+            if ((pass == 'Local Adult Pass' && duration == '1/2 Day') || (pass == 'Local Child Pass' && duration ==
+                    '1/2 Day')) {
+                if (pass == 'Local Adult Pass') {
+                    currentCost = (1000 + foodtokenval + 250) * quantity;
+                } else {
+                    currentCost = (500 + foodtokenval + 250) * quantity;
+                }
+            }
+            if ((pass == 'Foreign Adult Pass' && duration == '1/2 Day') || (pass == 'Foreign Child Pass' && duration ==
+                    '1/2 Day')) {
+                if (pass == 'Foreign Adult Pass') {
+                    currentCost = (5000 + foodtokenval + 500) * quantity;
+                } else {
+                    currentCost = (2500 + foodtokenval + 500) * quantity;
+                }
+            }
+
+            // full day
+            if ((pass == 'Local Adult Pass' && duration == 'Full Day') || (pass == 'Local Child Pass' && duration ==
+                    'Full Day')) {
+                if (pass == 'Local Adult Pass') {
+                    currentCost = (1000 + foodtokenval + 500) * quantity;
+                } else {
+                    currentCost = (500 + foodtokenval + 500) * quantity;
+                }
+            }
+            if ((pass == 'Foreign Adult Pass' && duration == '1/2 Day') || (pass == 'Foreign Child Pass' && duration ==
+                    'Full Day')) {
+                if (pass == 'Foreign Adult Pass') {
+                    currentCost = (5000 + foodtokenval + 1000) * quantity;
+                } else {
+                    currentCost = (2500 + foodtokenval + 1000) * quantity;
+                }
+            }
+
+
+
+
+            // Auto-update Values
+            if (pass) {
+                document.querySelector('#displaypass').innerHTML = pass;
+            }
+            if (quantity > 0) {
+                document.querySelector('#displayquantity').innerHTML = quantity;
+            } else {
+                document.querySelector('#displayquantity').innerHTML = '-';
+            }
+            if (duration) {
+                document.querySelector('#displayduration').innerHTML = duration;
+                currentitem.duration = duration;
+            }
+            if (foodtoken.checked) {
+                document.querySelector('#displayfoodtoken').innerHTML = 'Food provided';
+                currentitem.foodtoken = 'Food Provided';
+                currentCost = currentCost + 500;
+            } else {
+                document.querySelector('#displayfoodtoken').innerHTML = '-';
+                currentitem.foodtoken = '-';
+            }
+            if (currentCost > 0) {
+                document.querySelector('#displaycost').innerHTML = currentCost;
+            } else {
+                document.querySelector('#displaycost').innerHTML = '-';
+            }
+
+            // 
+            if (pass == 'Annual Pass-Local' || pass == 'Annual Pass-Foreign') {
+                document.querySelector('#displayduration').innerHTML = '-';
+                currentitem.duration = '-';
+                foodtoken.checked = false;
+            }
+
+
+
+            // disable inputs based on pass
+            if (pass == "Annual Pass-Local" || pass == 'Annual Pass-Foreign') {
+                document.querySelector('#duration').disabled = true;
+                document.querySelector('#foodtoken').disabled = true;
+            } else {
+                document.querySelector('#duration').disabled = false;
+                document.querySelector('#foodtoken').disabled = false;
+            }
+
+            currentitem.pass = pass;
+            currentitem.quantity = quantity;
+            currentitem.cost = currentCost;
+
+        }
+
+        function addOrder() {
+            document.querySelector('#displaypass').innerHTML = '-';
+            document.querySelector('#displayquantity').innerHTML = '-';
+            document.querySelector('#displayduration').innerHTML = '-';
+            document.querySelector('#displayfoodtoken').innerHTML = '-';
+            document.querySelector('#displaycost').innerHTML = '0';
+
+
+
+            let pass = document.querySelector('#pass').value;
+            let quantity = document.querySelector('#num').value;
+            if (pass !== '-' && quantity) {
+                totalCost = totalCost + currentitem.cost;
+                document.querySelector('#total').innerHTML = totalCost;
+                let ul = document.createElement('ul');
+                ul.setAttribute('class', 'order-list-overall');
+
+                let li1 = document.createElement('li');
+                li1.appendChild(document.createTextNode(currentitem.pass))
+                ul.appendChild(li1);
+
+                let li2 = document.createElement('li');
+                li2.appendChild(document.createTextNode(currentitem.quantity));
+                ul.appendChild(li2);
+
+                let li3 = document.createElement('li');
+                li3.appendChild(document.createTextNode(currentitem.duration));
+                ul.appendChild(li3);
+
+                let li4 = document.createElement('li');
+                li4.appendChild(document.createTextNode(currentitem.foodtoken));
+                ul.appendChild(li4);
+
+                let li5 = document.createElement('li');
+                li5.appendChild(document.createTextNode(currentitem.cost))
+                ul.appendChild(li5);
+
+                document.querySelector('.overall-order-list').appendChild(ul)
+            } else {
+                window.alert('Please fill in the fields in order to add order');
+            }
+
+            document.querySelector('#pass').value = '';
+            document.querySelector('#num').value = '';
+            document.querySelector('#duration').value = '';
+            document.querySelector('#foodtoken').checked = false;
+
+        }
+
+        function placeOrder() {
+            window.alert('Thank you for your custom reservation!');
+            let items = document.querySelectorAll('.order-list-overall');
+            document.querySelector('#total').innerHTML = 0;
+            items.forEach(element => {
+                element.remove();
+            });
+
+        }
+
+        function addFavourite() {
+
+            let pass = document.querySelector('#pass').value;
+            let quantity = document.querySelector('#num').value;
+            if (pass !== '-' && quantity) {
+                localStorage.setItem('currentorder', JSON.stringify(currentitem));
+                window.alert('Added to favorite');
+            } else {
+                window.alert('Please fill in the fields in order to add favorites');
+            }
+
+
+        }
+
+        function orderFavourite() {
+            let retrievedObject = localStorage.getItem('currentorder');
+            let object = JSON.parse(retrievedObject);
+            currentitem.pass = object.pass;
+            currentitem.quantity = object.quantity;
+            currentitem.quantity = object.quantity;
+            currentitem.foodtoken = object.foodtoken;
+            currentitem.cost = object.cost;
+            addOrder();
+        }
+        let points = 0;
+
+        function checkLoyalty() {
+            let items = document.querySelectorAll('.order-list-overall');
+            let displaypoints = '';
+            if (items.length > 3) {
+                points = items.length * 20;
+                localStorage.setItem('points', points);
+                displaypoints = localStorage.getItem('points');
+                window.alert(`Your loyalty points are ${displaypoints}`);
+            } else {
+                // displaypoints = localStorage.getItem('points');
+                // window.alert(`Your loyalty points are ${displaypoints}`);
+                window.alert('You must have more than 3 orders to earn loyalty points');
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
